@@ -81,12 +81,13 @@ font-family: 'Raleway', sans-serif;
   
   @media screen and (max-width: 768px)
   {
-    .container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-align-items: center;
-    }
+//     .container{
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+// align-items: center;
+
+    // }
       .containerScacchiera{
         width: 323px;
         height: 350px;
@@ -95,6 +96,19 @@ align-items: center;
         width: 32px;
         height: 35px;
       }
+      .bomb{
+        width: 30px;
+        height: 34px;
+      }
   }
 
+}
+@media screen and (max-width: 768px){
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+
+}
 }
