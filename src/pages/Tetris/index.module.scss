@@ -1,0 +1,84 @@
+.container {
+    width: 482px;
+    margin: 20px;
+
+  .contanierScacchiera{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 482px;
+    border:1px solid ;
+    cursor: pointer;
+  }
+  .scacchiera {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(0, 0, 0, 0.280);
+ 
+  }
+  .color1 {
+    background-color: #7e0707e1;
+  }
+  .color1:hover{
+    background-color: rgb(229, 0, 0);
+  }
+  .color2 {
+    background-color: rgba(167, 166, 165, 0.099);
+  }
+  .color2:hover{
+    background-color: rgba(20, 20, 20, 0.409);
+  }
+  .bomb{
+    width: 48px;
+    height: 46px;
+    // display: none;
+  }
+  .clickedCell{
+    background-color: rgba(67, 4, 0, 0.689);
+cursor:no-drop;
+  }
+  .punti{
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btnReset{
+    // width: 100px;
+    border-radius: 14px;
+    cursor: pointer;
+    padding: 4px;
+    margin-top: 10px;
+    /* position: fixed; */
+    // left: 43%;
+    background-color: rgba(1, 103, 100, 0.9490196078);
+    color: whitesmoke;
+  }
+  .endGameOver{
+    width: 482px;
+    height: 480px;
+    cursor:no-drop;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7fffd473;
+  }
+  .resultGame{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 95px;
+  }
+  .titleResult{
+    font-size: 3.8rem;
+    color: rgb(3, 3, 131);
+    text-shadow: rgb(255, 242, 0) 3px 3px;
+    font-family: 'Libre Baskerville', serif;
+font-family: 'Raleway', sans-serif;
+  }
+}
+  
+  
+  
+  
+  
