@@ -100,6 +100,11 @@ font-family: 'Raleway', sans-serif;
         width: 30px;
         height: 34px;
       }
+      .endGameOver{
+        width: 325px;
+    height: 350px;
+      }
+     
   }
 
 }
@@ -110,5 +115,11 @@ font-family: 'Raleway', sans-serif;
   justify-content: center;
 align-items: center;
 
+}
+.punti{
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 }
