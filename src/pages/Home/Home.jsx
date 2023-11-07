@@ -12,12 +12,12 @@ const Home=()=>{
     }
     return(
         <div className={styles.Home}>
-             <h1>questa è la Home
+             <h1 className={styles.Title}>questa è la Home : in fase di sviluppo
                 </h1>
                 <button onClick={onNavigateToCampoMinato}>
-                    Clicca qui per campominato
+                    Clicca qui per giocare con campominato
                 </button>
-               <button onClick={onNavigateToTetris} >clicca</button>
+               <button onClick={onNavigateToTetris} >clicca per giocare con tetris </button>
         </div>
     )
 }

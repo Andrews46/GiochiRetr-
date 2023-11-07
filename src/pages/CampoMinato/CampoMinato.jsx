@@ -96,7 +96,7 @@ const CampoMinato = () => {
         <h2>Score</h2>
         <span>{counter}</span>
       </div>
-      <div  className={styles.contanierScacchiera}>
+      <div  className={styles.containerScacchiera}>
         {Array(100).fill(null).map((_, index) => (
           <div
             onClick={() => onHandleClick(index)}

@@ -2,7 +2,7 @@
     width: 482px;
     margin: 20px;
 
-  .contanierScacchiera{
+  .containerScacchiera{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -76,23 +76,25 @@ cursor:no-drop;
 font-family: 'Raleway', sans-serif;
   }
 
-  $tablet: 768px;
-  @media (max-width: #{$tablet - 1})
+
+
+  
+  @media screen and (max-width: 768px)
   {
-      .contanierScacchiera{
-        width: 192px;
-        height: 200px;
-      }
-      .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-  align-items: center;
-        
+    .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+align-items: center;
+    }
+      .containerScacchiera{
+        width: 323px;
+        height: 350px;
       }
       .scacchiera{
-        width: 19px;
-        height: 20px;
+        width: 32px;
+        height: 35px;
       }
   }
+
 }
