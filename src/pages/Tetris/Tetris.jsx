@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Tetris = () => {
   const [cells, setCells] = useState(Array(100).fill(false)); // Array per tenere traccia delle caselle cliccate
@@ -26,7 +27,13 @@ const Tetris = () => {
   //   console.log(indexes)
   //   return Array.from(indexes);
   // };
+const navigate = useNavigate();
+const goOnHome=()=>
+navigate("/");
 
+const goOnCampoMinato=()=>{
+  navigate("/campominato")
+}
   const onHandleClick = (index) => {
     if (!cells[index]) {
       if (bombIndexes.includes(index)) {
@@ -67,9 +74,12 @@ const Tetris = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Tetris</h1>
+      <button className={styles.toGoHome} onClick={goOnHome}>Home</button>
+      <button className={styles.toGoCampominato} onClick={goOnCampoMinato}>Campominato</button>
+      <h1 className={styles.title}>Tetris</h1>
+
       <div className={styles.punti}>
-      <h2>Score</h2>
+      <h2 className={styles.title}>Score</h2>
 <span  ></span>
       </div>
       <div className={styles.contanierScacchiera}>
@@ -112,7 +122,7 @@ const Tetris = () => {
         </button>
   </div>
 )}
-<button>clicca</button>
+
     </div>
   );
 };

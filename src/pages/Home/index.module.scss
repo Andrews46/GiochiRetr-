@@ -1,3 +1,40 @@
+.Home{
+width: 50vw;
+
 .Title{
+    margin-top: 20px;
+    font-size: 3rem;
     text-transform: capitalize;
+    color: whitesmoke;
+}
+.TitleScelta{
+    margin-top: 20px;
+    text-transform: capitalize;
+    color: whitesmoke; 
+}
+.btn{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.btnClick1{
+    border-bottom-right-radius: 14px;
+    border-top-left-radius: 14px;
+    padding: 10px;
+    cursor:pointer;
+    width: 130px;
+    background-color: rgb(195, 255, 127);
+    background-color: rgb(76, 73, 73);
+      color: whitesmoke;
+}
+.btnClick2{
+    border-top-right-radius: 14px;
+      border-bottom-left-radius:14px ;
+    padding: 10px;
+    cursor:pointer;
+    width: 130px;
+    background-color: rgb(76, 73, 73);
+    color: whitesmoke;
+}
 }

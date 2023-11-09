@@ -1,4 +1,4 @@
-import './App.css'
+import styles from './App.module.scss';
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 
 import Home from './pages/Home';
@@ -8,7 +8,7 @@ function App() {
  
   return (
 
-      <div className='App'>
+      <div className={styles.App}>
 <BrowserRouter>     
       <Routes>
       <Route path="/" element={<Home/>}/>
@@ -16,7 +16,7 @@ function App() {
       <Route path="/Tetris" element={<Tetris/>}/>
       </Routes>
      </BrowserRouter>
-     
+     {/* <img className={styles.imgBody} src="OIPnuova.jpeg" alt="immagine" /> */}
       
       </div>
     

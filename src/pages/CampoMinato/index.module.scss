@@ -2,30 +2,57 @@
     width: 482px;
     margin: 20px;
 
+    .btnHome{
+      position: fixed;
+      top :10px;
+      left:10px;
+      width: 100px;
+      border-bottom-right-radius: 14px;
+      border-top-left-radius: 14px;
+      padding: 5px;
+      cursor:pointer;
+      background-color: rgb(76, 73, 73);
+      color: whitesmoke;
+    }
+    .btnTetris{
+      position: fixed;
+      top :10px;
+      right:10px;
+      width: 100px;
+      border-top-right-radius: 14px;
+      border-bottom-left-radius:14px ;
+      padding: 5px;
+      cursor:pointer;
+      background-color: rgb(76, 73, 73);
+      color: whitesmoke;
+    }
+    .title{
+      color:whitesmoke;
+    }
   .containerScacchiera{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     height: 482px;
-    border:1px solid ;
+    border:1px solid whitesmoke ;
     cursor: pointer;
   }
   .scacchiera {
     width: 48px;
     height: 48px;
-    border: 1px solid rgba(0, 0, 0, 0.280);
+    border: 1px solid whitesmoke;
   }
   .color1 {
-    background-color: #075b586c;
+    background-color: rgb(83, 85, 85);
   }
   .color1:hover{
-    background-color: aqua;
+    background-color: rgb(43, 50, 50);
   }
   .color2 {
-    background-color: rgba(251, 101, 1, 0.099);
+    background-color: rgb(176, 251, 1);
   }
   .color2:hover{
-    background-color: aqua;
+    background-color: rgb(123, 172, 9);
   }
   .bomb{
     width: 48px;

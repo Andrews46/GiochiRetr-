@@ -1,32 +1,58 @@
 .container {
     width: 482px;
     margin: 20px;
-
+    .title{
+      color: whitesmoke;
+    }
+    .toGoHome{
+      position: fixed;
+      top :10px;
+      left:10px;
+      width: 100px;
+      border-bottom-right-radius: 14px;
+      border-top-left-radius: 14px;
+      padding: 5px;
+      cursor:pointer;
+      background-color: rgb(76, 73, 73);
+      color: whitesmoke;
+    }
+    .toGoCampominato{
+      position: fixed;
+      top :10px;
+      right:10px;
+      width: 100px;
+      border-top-right-radius: 14px;
+      border-bottom-left-radius:14px ;
+      padding: 5px;
+      cursor:pointer;
+      background-color: rgb(76, 73, 73);
+      color: whitesmoke;
+    }
   .contanierScacchiera{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     height: 482px;
-    border:1px solid ;
+    border:1px solid whitesmoke;
     cursor: pointer;
   }
   .scacchiera {
     width: 48px;
     height: 48px;
-    border: 1px solid rgba(0, 0, 0, 0.280);
+    border: 1px solid whitesmoke;
  
   }
   .color1 {
-    background-color: #7e0707e1;
+    background-color: #7e0707;
   }
   .color1:hover{
     background-color: rgb(229, 0, 0);
   }
   .color2 {
-    background-color: rgba(167, 166, 165, 0.099);
+    background-color: rgb(167, 166, 165);
   }
   .color2:hover{
-    background-color: rgba(20, 20, 20, 0.409);
+    background-color: rgba(57, 56, 56, 0.998);
   }
   .bomb{
     width: 48px;
@@ -34,7 +60,7 @@
     // display: none;
   }
   .clickedCell{
-    background-color: rgba(67, 4, 0, 0.689);
+    background-color: rgb(47, 25, 23);
 cursor:no-drop;
   }
   .punti{

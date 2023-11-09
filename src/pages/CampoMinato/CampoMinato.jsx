@@ -1,6 +1,7 @@
 
 import styles from "./index.module.scss";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CampoMinato = () => {
   const [cells, setCells] = useState(Array(100).fill(false)); // Array per tenere traccia delle caselle cliccate
@@ -10,7 +11,12 @@ const CampoMinato = () => {
   const [youWin, setYouWin] = useState(false);
   const [clickedCells, setClickedCells] = useState(Array(100).fill(false)); // Array per tenere traccia delle celle già cliccate
 
+const navigate=useNavigate();
+const goHome =()=>
+ navigate("/")
 
+ const goTetris =()=>
+ navigate("/tetris")
   //funzione che controlla se una cella è stata cliccata se non lo è aumenta 
   //il punteggio altrimenti no
   const incrementScore = (index) => {
@@ -91,10 +97,12 @@ const CampoMinato = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Campo Minato</h1>
+      <button className={styles.btnHome} onClick={goHome}>Home</button>
+      <button className={styles.btnTetris} onClick={goTetris}>Tetris</button>
+      <h1 className={styles.title}>Campo Minato</h1>
       <div className={styles.punti}>
-        <h2>Score</h2>
-        <span>{counter}</span>
+        <h2 className={styles.title}>Score</h2>
+        <span className={styles.title} >{counter}</span>
       </div>
       <div  className={styles.containerScacchiera}>
         {Array(100).fill(null).map((_, index) => (

@@ -12,12 +12,18 @@ const Home=()=>{
     }
     return(
         <div className={styles.Home}>
-             <h1 className={styles.Title}>questa è la Home : in fase di sviluppo
+             <h1 className={styles.Title}> Home 
                 </h1>
-                <button onClick={onNavigateToCampoMinato}>
-                    Clicca qui per giocare con campominato
+                <h2 className={styles.TitleScelta}>
+                    Scegli il gioco che vuoi provare 
+                </h2>
+                <div className={styles.btn}>
+
+                <button className={styles.btnClick1} onClick={onNavigateToCampoMinato}>
+                    Campominato
                 </button>
-               <button onClick={onNavigateToTetris} >clicca per giocare con tetris </button>
+               <button  className={styles.btnClick2} onClick={onNavigateToTetris} >Tetris </button>
+                </div>
         </div>
     )
 }
