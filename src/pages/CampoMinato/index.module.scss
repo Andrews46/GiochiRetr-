@@ -128,8 +128,8 @@ font-family: 'Raleway', sans-serif;
         height: 34px;
       }
       .endGameOver{
-        width: 325px;
-    height: 350px;
+    //     width: 325px;
+    // height: 350px;
       }
      
   }
@@ -137,10 +137,14 @@ font-family: 'Raleway', sans-serif;
 }
 @media screen and (max-width: 768px){
 .container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  
+display: flex;
+flex-direction: column;
+justify-content: center;
 align-items: center;
+width: 100vw;
+height: 100vh;
+margin-top: 0px;
 
 }
 .punti{

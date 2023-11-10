@@ -1,22 +1,14 @@
-
-
 * {
   margin:0;
   padding:0;
   box-sizing: border-box;
-}
-body{
-  // background-color: rgb(180, 170, 170);
-  display: flex;
-    justify-content: center;
-    align-items: center;
-background-image: url(OIPnuova.jpeg);
-  background-size: cover;
+  
 }
 
-  .imgBody{
-    width: 100vw;
-    position: fixed;
-    // top: 0px;
-    left: 0px;
-  }
+
+// @media screen and (max-width:768px) {
+//   body{
+//     background-image:url(OIPnuova.jpeg) ;
+//     background-size: cover;
+//   }
+// }
