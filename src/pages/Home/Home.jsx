@@ -12,7 +12,7 @@ const Home=()=>{
     }
     return(
         <div className={styles.Home}>
-            {/* <img className={styles.imgBody} src="OIPnuova.jpeg" alt="immagine" /> */}
+            <img className={styles.imgBody} src="OIPnuova.jpeg" alt="immagine" />
              <h1 className={styles.Title}> Home 
                 </h1>
                 <h2 className={styles.TitleScelta}>
