@@ -16,7 +16,7 @@ function App() {
       <Route path="/Tetris" element={<Tetris/>}/>
       </Routes>
      </BrowserRouter>
-     {/* <img className={styles.imgBody} src="OIPnuova.jpeg" alt="immagine" /> */}
+     
       
       </div>
     

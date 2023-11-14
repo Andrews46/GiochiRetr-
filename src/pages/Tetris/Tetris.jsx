@@ -4,30 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 const Tetris = () => {
   const [cells, setCells] = useState(Array(100).fill(false)); // Array per tenere traccia delle caselle cliccate
-  const [bombIndexes, setBombIndexes] = useState([]);
+ 
   const [gameOver, setGameOver] = useState(false);
-  // const [counter,setCounter]=useState(0);
+
   const [youWin,setYouWin]=useState(false);
 
 // const incrementScore=()=>{
 //   setCounter(counter+1000)
 // }
 
-  // useEffect(() => {
-  //   setBombIndexes(getRandomBombIndexes());
-  // }, []);
-
-
-  // getRandomBombIndexes genera la posizione casuale delle bombe sul campo di gioco
-  // const getRandomBombIndexes = () => {
-  //   const indexes = new Set();
-  //   while (indexes.size < 20) {
-  //     indexes.add(Math.floor(Math.random() * 100));
-  //   }
-  //   console.log(indexes)
-  //   return Array.from(indexes);
-  // };
 const navigate = useNavigate();
+
 const goOnHome=()=>
 navigate("/");
 
@@ -36,9 +23,7 @@ const goOnCampoMinato=()=>{
 }
   const onHandleClick = (index) => {
     if (!cells[index]) {
-      if (bombIndexes.includes(index)) {
-        setGameOver(true);
-      }
+      
       const updatedCells = [...cells];
       updatedCells[index] = true;
       setCells(updatedCells);
@@ -46,7 +31,7 @@ const goOnCampoMinato=()=>{
       //funzione che fa un controllo sulle celle cliccate se sono cliccate tutte 
       //le celle possibili dove non ci sono bombe parte lo stato youWin per indicare
       //che hai vinto
-      const remainingCells = updatedCells.filter((cell, index) => !bombIndexes.includes(index));
+      const remainingCells = updatedCells.filter((cell, index) => (index));
       if (remainingCells.every((cell) => cell)) {
         setYouWin(true);
       }}
@@ -62,12 +47,11 @@ const goOnCampoMinato=()=>{
     }
     return null;
   };
-  
+
 // resetGame reimposta il gioco all'inizio
   const resetGame = () => {
     setCells(Array(100).fill(false));
      setGameOver(false);
-    // setBombIndexes(getRandomBombIndexes());
     // setCounter(0)
   //  setYouWin(false)
   };
@@ -83,7 +67,7 @@ const goOnCampoMinato=()=>{
 <span  ></span>
       </div>
       <div className={styles.contanierScacchiera}>
-        {Array(64).fill(null).map((_, index) => (
+        {Array(100).fill(null).map((_, index) => (
           <div
             onClick={() => onHandleClick(index)}
             key={index}
