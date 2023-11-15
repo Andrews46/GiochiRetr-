@@ -1,7 +1,14 @@
 .Home{
-width: 50vw;
+width: 100vw;
+height: 100vh;
 // background-image: url(OIPnuova.jpeg);
 //     background-size: cover;
+display: flex;
+justify-content: center;
+align-items: center;
+background-image: url(OIPnuova.jpeg);
+background-repeat: no-repeat;
+background-size: cover;
 .Title{
     margin-top: 20px;
     font-size: 3rem;
@@ -25,7 +32,6 @@ width: 50vw;
     padding: 10px;
     cursor:pointer;
     width: 130px;
-    background-color: rgb(195, 255, 127);
     background-color: rgb(76, 73, 73);
       color: whitesmoke;
 }
@@ -53,6 +59,10 @@ width: 50vw;
         height: 100vh;
         margin-top: 0px;
         
+    }
+    .btn{
+        
+        gap:14px;
     }
     
 }
