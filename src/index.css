@@ -5,4 +5,9 @@ body{
     background-image: url(OIPnuova.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-   }
+}
+@media screen and (max-width: 768px){
+    body{
+    width: 100vw;
+    height: 100vh;
+     } }
