@@ -1,14 +1,7 @@
 .Home{
-width: 100vw;
-height: 100vh;
+width: 50vw;
 // background-image: url(OIPnuova.jpeg);
 //     background-size: cover;
-display: flex;
-justify-content: center;
-align-items: center;
-background-image: url(OIPnuova.jpeg);
-background-repeat: no-repeat;
-background-size: cover;
 .Title{
     margin-top: 20px;
     font-size: 3rem;
@@ -58,7 +51,7 @@ background-size: cover;
         width: 100vw;
         height: 100vh;
         margin-top: 0px;
-        
+        background-color: rgb(77, 75, 75);
     }
     .btn{
         
