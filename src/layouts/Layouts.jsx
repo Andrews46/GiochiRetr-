@@ -6,7 +6,7 @@ import styles from "./index.module.scss";
 const Layouts =()=>{
     return (
         <div className={styles.Layouts}>
-          
+          <img src="sfondo.jpeg" alt="immagine" />
 
         <Outlet />
      
