@@ -2,12 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(sfondo.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100vh;
     position:relative;
     img{
         width: 100vw;
+        height:100vh;
+    }
+}
+
+@media screen and (max-width: 768px){
+    img{
+       object-fit: cover;
     }
 }
