@@ -1,4 +1,9 @@
 .Layouts{
-    background-image: url(OIPnuova.jpeg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(sfondo.jpeg);
+    background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
