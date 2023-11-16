@@ -2,7 +2,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(OIPnuova.jpeg);
+    background-image: url(sfondo.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
 }
