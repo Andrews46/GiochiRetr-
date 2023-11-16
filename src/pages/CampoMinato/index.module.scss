@@ -1,7 +1,7 @@
 .container {
     width: 482px;
     margin: 20px;
-
+position: absolute;
     .btnHome{
       position: fixed;
       top :10px;
@@ -108,13 +108,6 @@ font-family: 'Raleway', sans-serif;
   
   @media screen and (max-width: 768px)
   {
-//     .container{
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: center;
-// align-items: center;
-
-    // }
       .containerScacchiera{
         width: 323px;
         height: 350px;
