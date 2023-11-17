@@ -55,11 +55,6 @@
   .color2:hover{
     background-color: rgba(57, 56, 56, 0.998);
   }
-  .bomb{
-    width: 48px;
-    height: 46px;
-    // display: none;
-  }
   .clickedCell{
     background-color: rgb(47, 25, 23);
 cursor:no-drop;
@@ -71,13 +66,11 @@ cursor:no-drop;
     align-items: center;
   }
   .btnReset{
-    // width: 100px;
     border-radius: 14px;
     cursor: pointer;
     padding: 4px;
     margin-top: 10px;
-    /* position: fixed; */
-    // left: 43%;
+   
     background-color: rgba(1, 103, 100, 0.9490196078);
     color: whitesmoke;
   }
@@ -103,9 +96,38 @@ cursor:no-drop;
     font-family: 'Libre Baskerville', serif;
 font-family: 'Raleway', sans-serif;
   }
+  
+
+@media screen and (max-width: 768px){
+.container{
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100vw;
+height: 100vh;
+margin-top: 0px;
+
 }
-  
-  
-  
+
+.containerScacchiera{
+  width: 323px;
+  height: 350px;
+}
+.scacchiera{
+  width: 32px;
+  height: 35px;
+}
+.punti{
+margin: 5px;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+gap :50px;
+
+}
+}
+}
   
   

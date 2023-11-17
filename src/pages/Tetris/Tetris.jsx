@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 const Tetris = () => {
