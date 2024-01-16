@@ -27,7 +27,7 @@ position: absolute;
       color: whitesmoke;
     }
     .title{
-      color:whitesmoke;
+      color:#f9ff04;
     }
   .containerScacchiera{
     display: flex;
@@ -40,7 +40,7 @@ position: absolute;
   .scacchiera {
     width: 48px;
     height: 48px;
-    border: 1px solid whitesmoke;
+ 
   }
   .color1 {
     background-color: rgb(83, 85, 85);
@@ -73,8 +73,10 @@ cursor:no-drop;
     cursor: pointer;
     padding: 4px;
     margin-top: 10px;
-    background-color: rgba(1, 103, 100, 0.9490196078);
-    color: whitesmoke;
+    background-color: #f9ff04;
+    cursor:pointer;
+    color: rgb(3, 3, 131); 
+   font-size: 1.2rem;
   }
   .endGameOver{
     width: 482px;
@@ -83,13 +85,13 @@ cursor:no-drop;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #7fffd473;
+   
   }
   .resultGame{
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 123px;
+    position:absolute;
+    top: 70px;
   }
   .titleResult{
     font-size: 3.8rem;

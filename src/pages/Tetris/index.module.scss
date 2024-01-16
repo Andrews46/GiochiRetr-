@@ -3,7 +3,7 @@
     margin: 20px;
     position: absolute;
     .title{
-      color: whitesmoke;
+      color :#f9ff04;
     }
     .toGoHome{
       position: fixed;
@@ -30,34 +30,18 @@
       color: whitesmoke;
     }
   .contanierScacchiera{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    
-    border:1px solid whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
     cursor: pointer;
   }
   .scacchiera {
-    width: 48px;
+    border:1px solid whitesmoke;
     height: 48px;
-    border: 1px solid whitesmoke;
+   
  
   }
   .color1 {
-    background-color: #7e0707;
-  }
-  .color1:hover{
-    background-color: rgb(229, 0, 0);
-  }
-  .color2 {
-    background-color: rgb(167, 166, 165);
-  }
-  .color2:hover{
-    background-color: rgba(57, 56, 56, 0.998);
-  }
-  .clickedCell{
-    background-color: rgba(47, 25, 23, 0.650);
-cursor:no-drop;
+    background-color:#07001e;
   }
   .punti{
     margin: 5px;
@@ -96,6 +80,17 @@ cursor:no-drop;
     font-family: 'Libre Baskerville', serif;
 font-family: 'Raleway', sans-serif;
   }
+  .btnGameStart{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f9ff04;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #333;
+  }
+ 
 }
 
 @media screen and (max-width: 768px){
