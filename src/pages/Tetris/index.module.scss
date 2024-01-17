@@ -49,37 +49,7 @@
     justify-content: space-between;
     align-items: center;
   }
-  .btnReset{
-    border-radius: 14px;
-    cursor: pointer;
-    padding: 4px;
-    margin-top: 10px;
-   
-    background-color: rgba(1, 103, 100, 0.9490196078);
-    color: whitesmoke;
-  }
-  .endGameOver{
-    width: 482px;
-    height: 480px;
-    cursor:no-drop;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #7fffd473;
-  }
-  .resultGame{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 95px;
-  }
-  .titleResult{
-    font-size: 3.8rem;
-    color: rgb(3, 3, 131);
-    text-shadow: rgb(255, 242, 0) 3px 3px;
-    font-family: 'Libre Baskerville', serif;
-font-family: 'Raleway', sans-serif;
-  }
+
   .btnGameStart{
     margin-top: 20px;
     padding: 10px 20px;
@@ -99,7 +69,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 width: 322px;
-margin-top: 10px;
+margin-top: 80px;
 
 
 
