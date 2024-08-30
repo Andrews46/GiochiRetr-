@@ -1,95 +1,399 @@
-.container {
-    width: 482px;
-    margin: 20px;
-    position: absolute;
-    .title{
-      color :#f9ff04;
-    }
-    .toGoHome{
-      position: fixed;
-      top :10px;
-      left:10px;
-      width: 100px;
-      border-bottom-right-radius: 14px;
-      border-top-left-radius: 14px;
-      padding: 5px;
-      cursor:pointer;
-      background-color: rgb(76, 73, 73);
-      color: whitesmoke;
-    }
-    .toGoCampominato{
-      position: fixed;
-      top :10px;
-      right:10px;
-      width: 100px;
-      border-top-right-radius: 14px;
-      border-bottom-left-radius:14px ;
-      padding: 5px;
-      cursor:pointer;
-      background-color: rgb(76, 73, 73);
-      color: whitesmoke;
-    }
-  .contanierScacchiera{
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    cursor: pointer;
-  }
-  .scacchiera {
-    border:1px solid whitesmoke;
-    height: 48px;
+// .container {
+//     width: 482px;
+//     margin: 20px;
+//     position: absolute;
+//     .title{
+//       color :#f9ff04;
+//     }
+//     .toGoHome{
+//       position: fixed;
+//       top :10px;
+//       left:10px;
+//       width: 100px;
+//       border-bottom-right-radius: 14px;
+//       border-top-left-radius: 14px;
+//       padding: 5px;
+//       cursor:pointer;
+//       background-color: rgb(76, 73, 73);
+//       color: whitesmoke;
+//     }
+//     .toGoCampominato{
+//       position: fixed;
+//       top :10px;
+//       right:10px;
+//       width: 100px;
+//       border-top-right-radius: 14px;
+//       border-bottom-left-radius:14px ;
+//       padding: 5px;
+//       cursor:pointer;
+//       background-color: rgb(76, 73, 73);
+//       color: whitesmoke;
+//     }
+//   .contanierScacchiera{
+//     display: grid;
+//     grid-template-columns: repeat(10, 1fr);
+//     cursor: pointer;
+//   }
+//   .scacchiera {
+//     border:1px solid whitesmoke;
+//     height: 48px;
    
  
-  }
-  .color1 {
-    background-color:#07001e;
-  }
-  .punti{
-    margin: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+//   }
+//   .color1 {
+//     background-color:#07001e;
+//   }
+//   .figure {
+//     margin: 5px 0;
+//     padding: 10px;
+//     border: 1px solid #000; // stile del bordo per le figure
+//     background-color: #f0f0f0; // colore di sfondo per le figure
+//   }
+//   .row {
+//     display: flex;
+//   }
+//   .punti{
+//     margin: 5px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
 
-  .btnGameStart{
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #f9ff04;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #333;
-  }
- 
-}
+//   .btnGameStart{
+//     margin-top: 20px;
+//     padding: 10px 20px;
+//     font-size: 16px;
+//     background-color: #f9ff04;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     color: #333;
+//   }
+//   .cell {
+//     width: 20px;
+//     height: 20px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border: 1px solid #ccc; // stile del bordo per le celle
+//   }
+// }
 
-@media screen and (max-width: 768px){
-.container{
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 322px;
-margin-top: 80px;
+// @media screen and (max-width: 768px){
+// .container{
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// width: 322px;
+// margin-top: 80px;
 
 
 
-.containerScacchiera{
-  width: 323px;
-  height: 350px;
-}
-.scacchiera{
-  width: 32px;
-  height: 35px;
+// .containerScacchiera{
+//   width: 323px;
+//   height: 350px;
+// }
+// .scacchiera{
+//   width: 32px;
+//   height: 35px;
+// }
+// .punti{
+// margin: 5px;
+// display: flex;
+// justify-content: space-evenly;
+// align-items: center;
+// gap :50px;
+
+// }
+// }
+// }
+  
+// .container {
+//   width: 482px;
+//   margin: 20px;
+//   position: absolute;
+
+//   .title {
+//     color: #f9ff04;
+//   }
+
+//   .toGoHome,
+//   .toGoCampominato {
+//     position: fixed;
+//     top: 10px;
+//     width: 100px;
+//     padding: 5px;
+//     cursor: pointer;
+//     background-color: rgb(76, 73, 73);
+//     color: whitesmoke;
+//     border-radius: 14px;
+//   }
+
+//   .toGoHome {
+//     left: 10px;
+//     border-bottom-right-radius: 14px;
+//     border-top-left-radius: 14px;
+//   }
+
+//   .toGoCampominato {
+//     right: 10px;
+//     border-top-right-radius: 14px;
+//     border-bottom-left-radius: 14px;
+//   }
+
+//   .contanierScacchiera {
+//     display: grid;
+//     grid-template-columns: repeat(10, 1fr);
+//     gap: 1px;
+//     cursor: pointer;
+//   }
+
+//   .scacchiera {
+//     border: 1px solid whitesmoke;
+//     height: 48px;
+//   }
+
+//   .color1 {
+//     background-color: #07001e;
+//   }
+
+//   .figure {
+//     margin: 20px 0; /* Increase the margin to make the figures more visible */
+//     padding: 10px;
+//     border: 1px solid #000;
+//     background-color: #f0f0f0;
+//   }
+
+//   .figuresContainer {
+//     margin-top: 20px;
+//   }
+
+//   .row {
+//     display: flex;
+//   }
+
+//   .cell {
+//     width: 20px;
+//     height: 20px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border: 1px solid #ccc;
+//   }
+
+//   .punti {
+//     margin: 5px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+
+//   .btnGameStart {
+//     margin-top: 20px;
+//     padding: 10px 20px;
+//     font-size: 16px;
+//     background-color: #f9ff04;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     color: #333;
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+//   .container {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     width: 322px;
+//     margin-top: 80px;
+
+//     .contanierScacchiera {
+//       width: 323px;
+//       height: 350px;
+//     }
+
+//     .scacchiera {
+//       width: 32px;
+//       height: 35px;
+//     }
+
+//     .punti {
+//       margin: 5px;
+//       display: flex;
+//       justify-content: space-evenly;
+//       align-items: center;
+//       gap: 50px;
+//     }
+//   }
+// }
+
+.container {
+  width: 482px;
+  margin: 20px;
+  position: absolute;
 }
 .punti{
-margin: 5px;
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-gap :50px;
+  display: flex;
+  justify-content: space-between;
+}
 
+.title {
+  color: #ffff00;
 }
+.counter{
+  color: #ffff00;
 }
+
+.toGoHome, .toGoCampominato {
+  position: fixed;
+  width: 100px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: rgb(76, 73, 73);
+  color: whitesmoke;
 }
+
+.toGoHome {
+  top: 10px;
+  left: 10px;
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 14px;
+}
+
+.toGoCampominato {
+  top: 10px;
+  right: 10px;
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.contanierScacchiera {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   
-  
+}
+
+.scacchiera {
+  border: 1px solid whitesmoke;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+.btnLeft{
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid gray;
+  position: fixed;
+    left: 200px;
+    top: 306px;
+    color: #333;
+    background-color: #f9ff04;
+  cursor:pointer;
+}
+.btnRight{
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid gray;
+  position: fixed;
+  right: 200px;
+  top: 306px;
+   color: #333;
+  background-color: #f9ff04;
+  cursor:pointer;
+}
+
+.filled {
+  background-color: red; /* colore placeholder per riempire le celle delle figure */
+}
+
+.btnGameStart {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f9ff04;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333;
+}
+
+.gameOverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 10;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color:  #f9ff04;
+    color:black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #ede908;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 322px;
+    margin-top: 80px;
+  }
+
+  .containerScacchiera {
+    width: 323px;
+    height: 350px;
+  }
+
+  .scacchiera {
+    width: 32px;
+    height: 35px;
+  }
+
+  .punti {
+    margin: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+  }
+ 
+  .btnLeft{
+    position:fixed;
+    left: 0px;
+    top: 315px;
+  }
+  .btnRight{
+    position:fixed;
+    right: 0;
+    top:315px;
+  }
+}
