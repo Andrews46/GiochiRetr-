@@ -131,6 +131,29 @@ const Tetris = () => {
       setPosition(newPosition);
     }
   };
+  // Funzione per ruotare le figure 
+  const rotateMatrix = (matrix) => {
+    // Trasporre la matrice
+    const transposedMatrix = matrix[0].map((_, colIndex) =>
+      matrix.map(row => row[colIndex])
+    );
+  
+    // Invertire le righe per ottenere una rotazione di 90 gradi
+    return transposedMatrix.map(row => row.reverse());
+  };
+  
+  const rotateFigure = () => {
+    if (gameOver || !currentFigure) return;
+  
+    // Ruota la figura
+    const rotatedForma = rotateMatrix(currentFigure.forma);
+  
+    // Verifica se la rotazione provoca una collisione
+    const newFigure = { ...currentFigure, forma: rotatedForma };
+    if (!hasCollision(position, newFigure)) {
+      setCurrentFigure(newFigure);
+    }
+  };
 
   // Funzione per renderizzare la scacchiera
   const renderScacchiera = () => {
@@ -176,6 +199,7 @@ const Tetris = () => {
       <button className={styles.toGoCampominato} onClick={goOnCampoMinato}>Campo Minato</button>
       <button onClick={moveLeft} className={styles.btnLeft}><AiFillCaretLeft/></button>
       <button onClick={moveRight} className={styles.btnRight}><AiFillCaretRight/></button>
+      
       <h1 className={styles.title}>Tetris</h1>
       <div className={styles.punti}>
         <h2 className={styles.title}>Score</h2>
@@ -192,9 +216,13 @@ const Tetris = () => {
           </div>
         )}
       </div>
+      <div className={styles.containerBtn}>
       <button onClick={startGame} className={styles.btnGameStart}>
         {gameOver ? "Ricomincia" : "Comincia a giocare"}
       </button>
+      <button onClick={rotateFigure}className={styles.btnRotate}>Ruota</button>
+      </div>
+       
     </div>
   );
 };

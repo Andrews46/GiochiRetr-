@@ -308,8 +308,21 @@
 .filled {
   background-color: red; /* colore placeholder per riempire le celle delle figure */
 }
-
+.containerBtn{
+  display: flex;
+  justify-content: space-between;
+}
 .btnGameStart {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f9ff04;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333;
+}
+.btnRotate{
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
