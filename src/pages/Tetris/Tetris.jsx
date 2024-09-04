@@ -99,7 +99,7 @@ const Tetris = () => {
   // Effetto per gestire il movimento automatico verso il basso
   useEffect(() => {
     if (currentFigure && !gameOver) {
-      const id = setInterval(moveDown, 1000);
+      const id = setInterval(moveDown, 600);
       return () => clearInterval(id);
     }
   }, [currentFigure, moveDown, gameOver]);
