@@ -82,10 +82,12 @@ cursor:no-drop;
     height: 480px;
     cursor:no-drop;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
    
   }
+  
   .resultGame{
     display: flex;
     flex-direction: column;

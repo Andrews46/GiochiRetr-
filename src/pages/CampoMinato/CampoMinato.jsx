@@ -1,4 +1,3 @@
-
 import styles from "./index.module.scss";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +9,10 @@ const CampoMinato = () => {
   const [counter, setCounter] = useState(0);
   const [youWin, setYouWin] = useState(false);
   const [clickedCells, setClickedCells] = useState(Array(100).fill(false)); // Array per tenere traccia delle celle già cliccate
+//stato per il localstorage
+const [score,setScore]=useState(()=>{
+  return localStorage.getItem("score")?parseInt(localStorage.getItem("score")):0;
+});
 
 const navigate=useNavigate();
 const goHome =()=>
@@ -21,7 +24,14 @@ const goHome =()=>
   //il punteggio altrimenti no
   const incrementScore = (index) => {
     if (!clickedCells[index]) {
-      setCounter((prevCounter) => prevCounter + 1000);
+      setCounter((prevCounter) =>{
+        const newCounter = prevCounter + 1000;
+        if (newCounter>score){
+          setScore(newCounter);
+          localStorage.setItem("score",newCounter);
+        }
+        return newCounter;
+      });
       setClickedCells((prevClickedCells) => {
         const updatedClickedCells = [...prevClickedCells];
         updatedClickedCells[index] = true;
@@ -34,6 +44,7 @@ const goHome =()=>
     setBombIndexes(getRandomBombIndexes());
   }, []);
 
+  
   // getRandomBombIndexes genera la posizione casuale delle bombe sul campo di gioco
   const getRandomBombIndexes = () => {
     const indexes = new Set();
@@ -43,7 +54,6 @@ const goHome =()=>
     console.log(indexes);
     return Array.from(indexes);
   };
-
   const onHandleClick = (index) => {
     if (!cells[index]) {
       if (bombIndexes.includes(index)) {
@@ -103,6 +113,7 @@ const goHome =()=>
       <div className={styles.punti}>
         <h2 className={styles.title}>Score</h2>
         <span className={styles.title} >{counter}</span>
+        <span className={styles.title}>{score} Record</span>
       </div>
       <div  className={styles.containerScacchiera}>
         {Array(100).fill(null).map((_, index) => (

@@ -5,26 +5,24 @@ import { randomFigure } from "../../FigureGeometriche";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 const Tetris = () => {
-  // Hook di React Router per la navigazione
   const navigate = useNavigate();
-  // Funzioni per la navigazione
+
   const goOnHome = () => navigate("/");
   const goOnCampoMinato = () => navigate("/campominato");
 
-  // Stato per la scacchiera: una matrice 10x10 inizializzata con null
   const [scacchiera, setScacchiera] = useState(
     Array.from({ length: 10 }, () => Array(10).fill(null))
   );
-  // Stato per la figura corrente
   const [currentFigure, setCurrentFigure] = useState(null);
-  // Stato per la posizione corrente della figura
   const [position, setPosition] = useState({ x: 3, y: 0 });
-  // Stato per il punteggio
   const [counter, setCounter] = useState(0);
-  // Stato per indicare se il gioco è terminato
   const [gameOver, setGameOver] = useState(false);
 
-  // Funzione per verificare le collisioni
+  // Stato per il punteggio massimo (salvato nel localStorage)
+  const [highScore, setHighScore] = useState(() => {
+    return localStorage.getItem("highScore") ? parseInt(localStorage.getItem("highScore")) : 0;
+  });
+
   const hasCollision = useCallback((newPosition, figure = currentFigure) => {
     if (!figure) return false;
     for (let y = 0; y < figure.forma.length; y++) {
@@ -46,7 +44,6 @@ const Tetris = () => {
     return false;
   }, [currentFigure, scacchiera]);
 
-  // Funzione per unire la figura corrente alla scacchiera
   const mergeFigure = useCallback(() => {
     if (!currentFigure) return;
     setScacchiera((prevScacchiera) => {
@@ -62,7 +59,6 @@ const Tetris = () => {
     });
   }, [currentFigure, position]);
 
-  // Funzione per controllare e rimuovere le righe complete
   const checkCompleteRows = useCallback(() => {
     setScacchiera((prevScacchiera) => {
       const newScacchiera = prevScacchiera.filter((row) => !row.every((cell) => cell !== null));
@@ -75,10 +71,9 @@ const Tetris = () => {
     });
   }, []);
 
-  // Funzione per muovere la figura verso il basso
   const moveDown = useCallback(() => {
     if (gameOver) return;
-    
+
     const newPosition = { ...position, y: position.y + 1 };
     if (!hasCollision(newPosition)) {
       setPosition(newPosition);
@@ -89,14 +84,18 @@ const Tetris = () => {
       const newStartPosition = { x: 3, y: 0 };
       if (hasCollision(newStartPosition, newFigure)) {
         setGameOver(true);
+        // Salva il punteggio più alto nel localStorage
+        if (counter > highScore) {
+          setHighScore(counter);
+          localStorage.setItem("highScore", counter);
+        }
       } else {
         setCurrentFigure(newFigure);
         setPosition(newStartPosition);
       }
     }
-  }, [position, hasCollision, mergeFigure, checkCompleteRows, gameOver]);
+  }, [position, hasCollision, mergeFigure, checkCompleteRows, gameOver, counter, highScore]);
 
-  // Effetto per gestire il movimento automatico verso il basso
   useEffect(() => {
     if (currentFigure && !gameOver) {
       const id = setInterval(moveDown, 600);
@@ -104,7 +103,6 @@ const Tetris = () => {
     }
   }, [currentFigure, moveDown, gameOver]);
 
-  // Funzione per iniziare o ricominciare il gioco
   const startGame = () => {
     setScacchiera(Array.from({ length: 10 }, () => Array(10).fill(null)));
     setCounter(0);
@@ -114,7 +112,6 @@ const Tetris = () => {
     setPosition({ x: 3, y: 0 });
   };
 
-  // Funzione per muovere la figura a sinistra
   const moveLeft = () => {
     if (gameOver) return;
     const newPosition = { ...position, x: position.x - 1 };
@@ -123,7 +120,6 @@ const Tetris = () => {
     }
   };
 
-  // Funzione per muovere la figura a destra
   const moveRight = () => {
     if (gameOver) return;
     const newPosition = { ...position, x: position.x + 1 };
@@ -131,31 +127,24 @@ const Tetris = () => {
       setPosition(newPosition);
     }
   };
-  // Funzione per ruotare le figure 
+
   const rotateMatrix = (matrix) => {
-    // Trasporre la matrice
     const transposedMatrix = matrix[0].map((_, colIndex) =>
       matrix.map(row => row[colIndex])
     );
-  
-    // Invertire le righe per ottenere una rotazione di 90 gradi
     return transposedMatrix.map(row => row.reverse());
   };
-  
+
   const rotateFigure = () => {
     if (gameOver || !currentFigure) return;
-  
-    // Ruota la figura
+
     const rotatedForma = rotateMatrix(currentFigure.forma);
-  
-    // Verifica se la rotazione provoca una collisione
     const newFigure = { ...currentFigure, forma: rotatedForma };
     if (!hasCollision(position, newFigure)) {
       setCurrentFigure(newFigure);
     }
   };
 
-  // Funzione per renderizzare la scacchiera
   const renderScacchiera = () => {
     const grid = scacchiera.map((row, y) =>
       row.map((cell, x) => (
@@ -163,7 +152,6 @@ const Tetris = () => {
           key={`${y}-${x}`}
           className={`${styles.scacchiera} ${cell ? styles.filled : ""}`}
           style={{
-            
             backgroundColor: cell ? `rgb(${cell})` : " #07001e",
           }}
         />
@@ -179,7 +167,6 @@ const Tetris = () => {
                 key={`current-${position.y + y}-${position.x + x}`}
                 className={`${styles.scacchiera} ${styles.filled}`}
                 style={{
-                  
                   backgroundColor: `rgb(${currentFigure.color})`,
                 }}
               />
@@ -192,37 +179,36 @@ const Tetris = () => {
     return grid;
   };
 
-  // Rendering del componente
   return (
     <div className={styles.container}>
       <button className={styles.toGoHome} onClick={goOnHome}>Home</button>
       <button className={styles.toGoCampominato} onClick={goOnCampoMinato}>Campo Minato</button>
-      <button onClick={moveLeft} className={styles.btnLeft}><AiFillCaretLeft/></button>
-      <button onClick={moveRight} className={styles.btnRight}><AiFillCaretRight/></button>
-      
+      <button onClick={moveLeft} className={styles.btnLeft}><AiFillCaretLeft /></button>
+      <button onClick={moveRight} className={styles.btnRight}><AiFillCaretRight /></button>
       <h1 className={styles.title}>Tetris</h1>
       <div className={styles.punti}>
         <h2 className={styles.title}>Score</h2>
         <h2 className={styles.counter}>{counter}</h2>
+        <h2 className={styles.title}>Record: {highScore}</h2>
       </div>
       <div className={styles.contanierScacchiera}>
         {renderScacchiera()}
-       
+
         {gameOver && (
           <div className={styles.gameOverOverlay}>
             <h2>Game Over</h2>
             <p>Punteggio finale: {counter}</p>
+            <p>Record: {highScore}</p>
             <button onClick={startGame}>Ricomincia</button>
           </div>
         )}
       </div>
       <div className={styles.containerBtn}>
-      <button onClick={startGame} className={styles.btnGameStart}>
-        {gameOver ? "Ricomincia" : "Comincia a giocare"}
-      </button>
-      <button onClick={rotateFigure}className={styles.btnRotate}>Ruota</button>
+        <button onClick={startGame} className={styles.btnGameStart}>
+          {gameOver ? "Ricomincia" : "Comincia a giocare"}
+        </button>
+        <button onClick={rotateFigure} className={styles.btnRotate}>Ruota</button>
       </div>
-       
     </div>
   );
 };
